@@ -1,6 +1,7 @@
 import { Layer, Stage } from "react-konva";
 import Grid from "./Grid";
 import { useEffect, useState } from "react";
+import Methods from "./Methods";
 // import MapComponent from "./MapComponent";
 // import { FaDeaf } from "react-icons/fa";
 
@@ -33,11 +34,7 @@ const Canvas = () => {
     >
       <Grid width={width * 2} height={height * 2} gridSize={30} />
       <Layer>
-        {/* <MapComponent />
-        <MapComponent />
-        <MapComponent />
-        <MapComponent />
-        <MapComponent /> */}
+        <Methods />
       </Layer>
     </Stage>
   );
