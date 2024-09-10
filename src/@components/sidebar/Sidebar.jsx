@@ -4,7 +4,7 @@ import SidebarIcons from "./SidebarIcons";
 //Icons
 import hamburger from "../../assets/Hamburger.png";
 import frame from "../../assets/Frame.png";
-import git from "../../assets/Git.png";
+// import git from "../../assets/Git.png";
 import stack from "../../assets/Stack.png";
 
 //User Profile
@@ -19,7 +19,7 @@ const Sidebar = () => {
         <SidebarIcons icon={hamburger} />
         <SidebarIcons icon={frame} />
         <SidebarIcons icon={stack} />
-        <SidebarIcons icon={git} />
+        {/* <SidebarIcons icon={git} /> */}
       </div>
 
       <div className="mt-auto flex justify-center pb-4">
