@@ -9,7 +9,6 @@ const ConfigurationCheckBox = ({ entities_to_mock, all_entities }) => {
       {all_entities.map((entity, index) => {
         const isTrue = entities_to_mock.some((ele) => entity === ele);
 
-        console.log(isTrue);
         return (
           <div key={index} className="flex justify-between items-center p-2">
             <CheckBox isChecked={isTrue} entity={entity} />
