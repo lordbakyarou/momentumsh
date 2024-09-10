@@ -33,9 +33,7 @@ const Canvas = () => {
       className="canvas z-40 relative overflow-auto bg-primary-dark-gray"
     >
       <Grid width={width * 2} height={height * 2} gridSize={30} />
-      <Layer>
-        <Methods />
-      </Layer>
+      <Layer>{/* <Methods /> */}</Layer>
     </Stage>
   );
 };
