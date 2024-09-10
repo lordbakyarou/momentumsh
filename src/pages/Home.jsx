@@ -6,7 +6,7 @@ import Sidebar from "../@components/sidebar/Sidebar";
 
 const Home = () => {
   return (
-    <div className="w-screen h-screen relative grid grid-cols-home grid-rows-home ">
+    <div className="w-screen h-screen relative grid grid-cols-home grid-rows-home">
       <Sidebar />
       <Navbar />
 
