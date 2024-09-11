@@ -12,7 +12,7 @@ import userProfile from "../../assets/userProfile.png";
 
 const Sidebar = () => {
   return (
-    <div className="fixed z-50 left-0 top-0 pt-4 flex flex-col items-center min-h-screen w-14 bg-primary-gray">
+    <div className="fixed z-50 left-0 top-0 pt-4 flex flex-col items-center min-h-screen h-full w-14 bg-primary-gray">
       <Logo />
 
       <div className="flex flex-col gap-10 text-2xl pt-10">

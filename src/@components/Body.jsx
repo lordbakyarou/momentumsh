@@ -60,48 +60,56 @@ const Canvas = () => {
   };
 
   return (
-    <Stage
-      width={width * 2}
-      height={height * 2}
-      className="canvas z-40 relative overflow-auto bg-primary-dark-gray"
-    >
-      <Grid width={width * 2} height={height * 2} gridSize={30} />
-      <Layer>
-        {connectors.map((con) => {
-          const from = shapes.find((s) => s.id === con.id);
-          const to = shapes.find((s) => s.id === con.to);
+    <div className="relative">
+      <Stage
+        width={width * 2}
+        height={height * 2}
+        className="canvas z-40 relative overflow-auto bg-primary-dark-gray"
+      >
+        <Grid width={width * 2} height={height * 2} gridSize={30} />
+        <Layer>
+          {connectors.map((con) => {
+            const from = shapes.find((s) => s.id === con.id);
+            const to = shapes.find((s) => s.id === con.to);
 
-          const path = getOrthogonalPath(from, to);
+            const path = getOrthogonalPath(from, to);
 
-          console.log("from and to", from, to);
+            console.log("from and to", from, to);
 
-          return (
-            <Arrow
-              key={con.id}
-              points={path}
-              stroke="#7C7C7C"
-              strokeWidth={2}
-              lineCap="round"
-              lineJoin="round"
+            return (
+              <Arrow
+                key={con.id}
+                points={path}
+                stroke="#7C7C7C"
+                strokeWidth={2}
+                lineCap="round"
+                lineJoin="round"
+              />
+            );
+          })}
+          {shapes.map((shape) => (
+            <Methods
+              key={shape.id}
+              x={shape.x}
+              y={shape.y}
+              id={shape.id}
+              fromMethodId={fromMethodId}
+              setFromMethodId={setFromMethodId}
+              connectors={connectors}
+              setConnectors={setConnectors}
+              setShapes={setShapes}
+              handleDragEnd={handleDragEnd}
             />
-          );
-        })}
-        {shapes.map((shape) => (
-          <Methods
-            key={shape.id}
-            x={shape.x}
-            y={shape.y}
-            id={shape.id}
-            fromMethodId={fromMethodId}
-            setFromMethodId={setFromMethodId}
-            connectors={connectors}
-            setConnectors={setConnectors}
-            setShapes={setShapes}
-            handleDragEnd={handleDragEnd}
-          />
-        ))}
-      </Layer>
-    </Stage>
+          ))}
+        </Layer>
+      </Stage>
+      <button
+        className="bg-orange-500 fixed bottom-20 left-20  p-2 rounded text-white z-50"
+        onClick={() => alert("Add Methods clicked!")}
+      >
+        + Add Methods
+      </button>
+    </div>
   );
 };
 
